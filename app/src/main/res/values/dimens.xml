@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Text Sizes-->
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="font_32">32sp</dimen>
+    <dimen name="font_60">60sp</dimen>
+
+    <!--Generic Spaces-->
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+
+    <dimen name="player_image_height">400dp</dimen>
+</resources>
