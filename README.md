@@ -19,11 +19,16 @@ You can see my [Hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/ma
 #### Learn Dependency Injection with Hilt
 
 * [hilt-android - doc](https://developer.android.com/training/dependency-injection/hilt-android)
+* [dependency injection on android with hilt - blog](https://medium.com/androiddevelopers/dependency-injection-on-android-with-hilt-67b6031e62d)
 * [hilt - Android Dependency Injection - talk](https://www.youtube.com/watch?v=B56oV3IHMxg)
 * [migrating to Hilt - doc](https://dagger.dev/hilt/migration-guide)
+* [android Hilt - codelab](https://codelabs.developers.google.com/codelabs/android-hilt/#1)
 * [migrating your Dagger app to Hilt - codelab](https://codelabs.developers.google.com/codelabs/android-dagger-to-hilt/#0)
 * [an opinionated guide to Dependency Injection on Android (ADS '19) - talk](https://www.youtube.com/watch?v=o-ins1nvbDg&t=216s)
+* [hilt — Adding components to the hierarchy - blog](https://medium.com/androiddevelopers/hilt-adding-components-to-the-hierarchy-96f207d6d92d)
 * [hilt-dagger.dev - doc](https://dagger.dev/hilt/)
+* [android-hilt - example](https://github.com/googlecodelabs/android-hilt)
+* [android-dagger-hilt - example](https://github.com/googlecodelabs/android-dagger-to-hilt)
 
 ## Dagger
 
