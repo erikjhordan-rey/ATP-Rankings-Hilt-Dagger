@@ -5,6 +5,25 @@ with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/traini
 
 ![](./art/atp-tour.png)
 
+
+## Dependency Injection 
+
+### Hilt
+
+Hilt provides a standard way to use DI in your application by providing containers for every Android class in your project and managing their lifecycles automatically.
+
+* [dagger-hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master)
+
+### Dagger
+
+* [dagger-viewmodel-factory](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-factory)
+
+* [dagger-viewmodel-module](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-module)
+
+* [dagger-viewmodel-binds-instance](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-binds-instance) 
+
+* [dagger-viewmodel-multibindings](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-multibindings)
+
 Do you want to contribute?
 --------------------------
 
