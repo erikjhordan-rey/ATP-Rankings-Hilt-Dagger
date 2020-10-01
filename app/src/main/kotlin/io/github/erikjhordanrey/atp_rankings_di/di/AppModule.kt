@@ -1,19 +1,19 @@
-package io.github.erikjhordanrey.atp_rankings_di.di.players
+package io.github.erikjhordanrey.atp_rankings_di.di
 
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerLocalDataSource
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerRepository
-import io.github.erikjhordanrey.atp_rankings_di.di.scope.FeatureScope
 
 @Module
-object PlayersModule {
+@InstallIn(ApplicationComponent::class)
+object AppModule {
 
     @Provides
-    @FeatureScope
     fun providePlayerLocalDataSource() = PlayerLocalDataSource()
 
     @Provides
-    @FeatureScope
     fun providePlayerRepository(playerLocalDataSource: PlayerLocalDataSource) = PlayerRepository(playerLocalDataSource)
 }
