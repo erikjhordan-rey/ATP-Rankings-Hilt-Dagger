@@ -8,7 +8,9 @@ import javax.inject.Provider
 
 @Suppress("UNCHECKED_CAST")
 @FeatureScope
-class ViewModelFactory @Inject constructor(private val viewModelProviderMap: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>) : ViewModelProvider.Factory {
+class ViewModelFactory @Inject constructor(private val viewModelProviderMap:
+                                           Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>)
+    : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         val viewModelProvider = viewModelProviderMap[modelClass]
