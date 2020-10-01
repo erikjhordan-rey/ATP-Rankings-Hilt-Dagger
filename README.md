@@ -1,10 +1,9 @@
-# ATP-Rankings-di 
+# ATP-Rankings - work-in-progress 👷🔧️⛏
 
 The sample was created to show different approaches using dependency injection in Android projects 
 with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
 
-# Demo
-![](./art/atp.gif)
+![](./art/atp-tour.png)
 
 Do you want to contribute?
 --------------------------
