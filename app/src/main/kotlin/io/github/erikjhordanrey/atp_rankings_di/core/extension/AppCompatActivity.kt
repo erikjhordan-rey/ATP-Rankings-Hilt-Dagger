@@ -1,4 +1,4 @@
-package io.github.erikjhordanrey.atp_rankings_di.common.ui
+package io.github.erikjhordanrey.atp_rankings_di.core.extension
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel

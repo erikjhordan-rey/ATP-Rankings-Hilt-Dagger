@@ -1,4 +1,4 @@
-package io.github.erikjhordanrey.atp_rankings_di.common
+package io.github.erikjhordanrey.atp_rankings_di.core.coroutine
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers.IO

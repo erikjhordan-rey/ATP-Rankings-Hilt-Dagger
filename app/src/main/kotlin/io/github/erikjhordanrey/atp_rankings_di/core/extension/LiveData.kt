@@ -1,4 +1,4 @@
-package io.github.erikjhordanrey.atp_rankings_di.common.ui
+package io.github.erikjhordanrey.atp_rankings_di.core.extension
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData

@@ -1,7 +1,7 @@
 package io.github.erikjhordanrey.atp_rankings_di.di.players
 
-import io.github.erikjhordanrey.atp_rankings_di.common.CoroutineDispatchers
-import io.github.erikjhordanrey.atp_rankings_di.common.ui.viewModelProvidersOf
+import io.github.erikjhordanrey.atp_rankings_di.core.coroutine.CoroutineDispatchers
+import io.github.erikjhordanrey.atp_rankings_di.core.extension.viewModelProvidersOf
 import io.github.erikjhordanrey.atp_rankings_di.domain.GetPlayersUseCase
 import io.github.erikjhordanrey.atp_rankings_di.ui.PlayersActivity
 import io.github.erikjhordanrey.atp_rankings_di.ui.PlayersViewModel

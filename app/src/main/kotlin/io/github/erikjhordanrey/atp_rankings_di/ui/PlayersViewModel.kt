@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.erikjhordanrey.atp_rankings_di.common.CoroutineDispatchers
+import io.github.erikjhordanrey.atp_rankings_di.core.coroutine.CoroutineDispatchers
 import io.github.erikjhordanrey.atp_rankings_di.domain.GetPlayersUseCase
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
 import kotlinx.coroutines.launch
