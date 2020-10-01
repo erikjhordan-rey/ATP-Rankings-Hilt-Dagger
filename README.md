@@ -1,4 +1,4 @@
-# Rankings ATP Tour Tennis - Hilt - work-in-progress 👷🔧️⛏
+# Rankings ATP Tour Tennis - Hilt
 ![](./art/atp-tour.png)
 
 The sample was created to show different approaches using dependency injection in Android projects 
@@ -8,7 +8,7 @@ with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/traini
 
 This sample contains multiple branches to show different popular approaches used to provide dependencies in android apps.
 
-### Hilt
+## Hilt
 
 Hilt provides a standard way to use DI in your application by providing containers for every Android class in your project and managing their lifecycles automatically.
 
@@ -25,7 +25,7 @@ You can see my [Hilt](https://developer.android.com/training/dependency-injectio
 * [An opinionated guide to Dependency Injection on Android (ADS '19) - talk](https://www.youtube.com/watch?v=o-ins1nvbDg&t=216s)
 * [hilt-dagger.dev - doc](https://dagger.dev/hilt/)
 
-### Dagger
+## Dagger
 
 These are some common implementations used in the Android community
 
@@ -73,4 +73,3 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
