@@ -11,11 +11,9 @@ import javax.inject.Inject
 
 class PlayersActivity : AppCompatActivity() {
 
-    // @Inject lateinit var viewModelFactory: ViewModelFactory
+    private lateinit var binding: ActivityPlayersBinding
 
     private val playersAdapter by lazy { PlayersAdapter() }
-
-    private lateinit var binding: ActivityPlayersBinding
 
     @Inject
     lateinit var viewModel: PlayersViewModel
@@ -25,7 +23,6 @@ class PlayersActivity : AppCompatActivity() {
         binding = ActivityPlayersBinding.inflate(layoutInflater)
         setContentView(binding.root)
         inject(this)
-        //viewModel = viewModelProvidersOf(viewModelFactory)
         initObservers()
         initUi()
         viewModel.loadPlayers()
