@@ -1,9 +1,8 @@
-# ATP-Rankings - work-in-progress 👷🔧️⛏
+# Rankings ATP Tour Tennis - Hilt - work-in-progress 👷🔧️⛏
+![](./art/atp-tour.png)
 
 The sample was created to show different approaches using dependency injection in Android projects 
 with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
-
-![](./art/atp-tour.png)
 
 ## Dependency Injection 
 
@@ -24,7 +23,7 @@ You can see my [Hilt](https://developer.android.com/training/dependency-injectio
 * [Migrating to Hilt - doc](https://dagger.dev/hilt/migration-guide)
 * [Migrating your Dagger app to Hilt - codelab](https://codelabs.developers.google.com/codelabs/android-dagger-to-hilt/#0)
 * [An opinionated guide to Dependency Injection on Android (ADS '19) - talk](https://www.youtube.com/watch?v=o-ins1nvbDg&t=216s)
-* [dagger.dev - doc](https://dagger.dev/hilt/)
+* [hilt-dagger.dev - doc](https://dagger.dev/hilt/)
 
 ### Dagger
 
