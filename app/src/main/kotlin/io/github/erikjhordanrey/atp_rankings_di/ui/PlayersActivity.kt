@@ -11,25 +11,20 @@ import javax.inject.Inject
 
 class PlayersActivity : AppCompatActivity() {
 
-    // @Inject lateinit var viewModelFactory: ViewModelFactory
-
     private val playersAdapter by lazy { PlayersAdapter() }
 
     private lateinit var binding: ActivityPlayersBinding
 
-    @Inject
-    lateinit var viewModel: PlayersViewModel
+    @Inject lateinit var viewModel: PlayersViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlayersBinding.inflate(layoutInflater)
         setContentView(binding.root)
         inject(this)
-        //viewModel = viewModelProvidersOf(viewModelFactory)
         initObservers()
         initUi()
         viewModel.loadPlayers()
-
     }
 
     private fun initUi() = binding.viewPager.run {

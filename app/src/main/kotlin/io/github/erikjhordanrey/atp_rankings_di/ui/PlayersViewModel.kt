@@ -22,7 +22,9 @@ class PlayersViewModel @Inject constructor(private val getPlayersUseCase: GetPla
     fun loadPlayers() {
         viewModelScope.launch(coroutineDispatchers.io) {
             val result = getPlayersUseCase.getAllPlayers()
-            withContext(coroutineDispatchers.main) { _playerListState.value = result }
+            withContext(coroutineDispatchers.main) {
+                _playerListState.value = result
+            }
         }
     }
 }
