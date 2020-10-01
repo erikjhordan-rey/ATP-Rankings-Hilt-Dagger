@@ -29,17 +29,12 @@ You can see my [Hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/ma
 
 There are a few ways you can create a ViewModel instance. Since it’s a lifecycle-aware component, it needs a reference of the lifecycle owner such as an activity or fragment, so the samples contain some practices commonly used on the Android community.
 
-* Basic implementation using [ViewModelProvider.Factory](https://codelabs.developers.google.com/codelabs/kotlin-android-training-view-model/#0) to instantiate [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel).
-[dagger-viewmodel-factory - example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-factory)
-
-* Classic implementation to provide dependencies using [constructor injection and modules](https://dagger.dev/dev-guide/).
-[dagger-viewmodel-module - example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-module) 
-
-* Avoid arguments in [Dagger - Modules](https://dagger.dev/hilt/modules.html) using [BindsInstance](https://dagger.dev/api/2.10/dagger/BindsInstance.html).
-[dagger-viewmodel-binds-instance - example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-binds-instance) 
-
-* Provides a [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) using [Multibindings](https://dagger.dev/dev-guide/multibindings.html). 
-[dagger-viewmodel-multibindings - example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-multibindings)
+Goal | Example |
+--- | --- | 
+Basic implementation using [ViewModelProvider.Factory](https://codelabs.developers.google.com/codelabs/kotlin-android-training-view-model/#0) to instantiate [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel). | [dagger-viewmodel-factory](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-factory) |
+Classic implementation to provide dependencies using [constructor injection and modules](https://dagger.dev/dev-guide/) | [dagger-viewmodel-module](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-module) |
+Avoid arguments in [Dagger - Modules](https://dagger.dev/hilt/modules.html) using [BindsInstance](https://dagger.dev/api/2.10/dagger/BindsInstance.html) | [dagger-viewmodel-binds-instance](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-binds-instance) |
+Provides a [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) using [Multibindings](https://dagger.dev/dev-guide/multibindings.html) | [dagger-viewmodel-multibindings](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/dagger-viewmodel-multibindings) |
 
 #### Learn Dependency Injection with Dagger
 
