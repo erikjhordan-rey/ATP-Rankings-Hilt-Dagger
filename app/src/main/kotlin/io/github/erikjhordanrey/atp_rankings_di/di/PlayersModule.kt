@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerRepository
+import io.github.erikjhordanrey.atp_rankings_di.data.Repository
 import io.github.erikjhordanrey.atp_rankings_di.domain.GetPlayersUseCase
 
 @Module
@@ -12,5 +13,5 @@ import io.github.erikjhordanrey.atp_rankings_di.domain.GetPlayersUseCase
 object PlayersModule {
 
     @Provides
-    fun provideGetPlayersUseCase(playersRepository: PlayerRepository) = GetPlayersUseCase(playersRepository)
+    fun provideGetPlayersUseCase(playersRepository: Repository) = GetPlayersUseCase(playersRepository)
 }

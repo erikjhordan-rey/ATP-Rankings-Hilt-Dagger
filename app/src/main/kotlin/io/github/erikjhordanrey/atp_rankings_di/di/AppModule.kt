@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerLocalDataSource
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerRepository
+import io.github.erikjhordanrey.atp_rankings_di.data.Repository
 
 @Module
 @InstallIn(ApplicationComponent::class)
@@ -15,5 +16,5 @@ object AppModule {
     fun providePlayerLocalDataSource() = PlayerLocalDataSource()
 
     @Provides
-    fun providePlayerRepository(playerLocalDataSource: PlayerLocalDataSource) = PlayerRepository(playerLocalDataSource)
+    fun providePlayerRepository(playerLocalDataSource: PlayerLocalDataSource): Repository = PlayerRepository(playerLocalDataSource)
 }
