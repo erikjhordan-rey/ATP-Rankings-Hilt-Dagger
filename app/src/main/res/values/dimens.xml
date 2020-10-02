@@ -9,6 +9,7 @@
     <!--Generic Spaces-->
     <dimen name="space_8">8dp</dimen>
     <dimen name="space_16">16dp</dimen>
+    <dimen name="space_40">40dp</dimen>
 
     <dimen name="player_image_height">400dp</dimen>
 </resources>

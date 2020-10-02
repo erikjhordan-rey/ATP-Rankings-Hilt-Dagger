@@ -5,7 +5,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.compositeScaleTransform
+import io.github.erikjhordanrey.atp_rankings_di.core.extension.hide
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.liveDataObserve
+import io.github.erikjhordanrey.atp_rankings_di.core.extension.visible
 import io.github.erikjhordanrey.atp_rankings_di.databinding.ActivityPlayersBinding
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
 
@@ -37,6 +39,9 @@ class PlayersActivity : AppCompatActivity() {
     }
 
     private fun playerListStateUi(players: List<Player>) {
-        playersAdapter.set(players)
+        if (players.isNotEmpty()) {
+            playersAdapter.set(players)
+            binding.viewPager.visible()
+        }
     }
 }

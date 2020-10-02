@@ -1,14 +1,8 @@
 package io.github.erikjhordanrey.atp_rankings_di.doubles
 
-import io.github.erikjhordanrey.atp_rankings_di.data.Repository
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
 
-class FakePlayerRepository : Repository {
-
-    override suspend fun getAllPlayers() = givenPlayers()
-}
-
-private fun givenPlayers() = mutableListOf<Player>().apply {
+fun givenPlayers() = mutableListOf<Player>().apply {
     add(givenPlayer())
     add(givenPlayer2())
 }
