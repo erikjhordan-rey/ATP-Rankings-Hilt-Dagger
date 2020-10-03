@@ -41,16 +41,34 @@ class PlayersActivityShould {
     val testCoroutineDispatcher: CoDispatcher = TestCoroutineDispatchers()
 
     @Test
-    fun displayEmptyCaseIfThereAreNotPlayers() {
+    fun showEmptyViewWhenThereAreNotPlayers() {
         coEvery { fakePlayerRepository.getAllPlayers() } returns emptyList()
 
         launchActivity<PlayersActivity>()
 
-        onView(withId(R.id.view_pager)).check(matches(not(isDisplayed())))
+        onView(withId(R.id.empty_players_text_view)).check(matches(isDisplayed()))
     }
 
     @Test
-    fun displayTheNumberOfPlayers() {
+    fun notShowEmptyViewWhenThereArePlayers() {
+        coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
+
+        launchActivity<PlayersActivity>()
+
+        onView(withId(R.id.empty_players_text_view)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun notShowProgressBarWhenThereArePlayers() {
+        coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
+
+        launchActivity<PlayersActivity>()
+
+        onView(withId(R.id.players_progress_bar)).check(matches(not(isDisplayed())))
+    }
+
+    @Test
+    fun hasTheNumberOfPlayersOnViewPager() {
         coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
 
         launchActivity<PlayersActivity>()
