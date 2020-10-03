@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.compositeScaleTransform
-import io.github.erikjhordanrey.atp_rankings_di.core.extension.hide
+import io.github.erikjhordanrey.atp_rankings_di.core.extension.hideOrShow
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.liveDataObserve
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.visible
 import io.github.erikjhordanrey.atp_rankings_di.databinding.ActivityPlayersBinding
@@ -35,13 +35,20 @@ class PlayersActivity : AppCompatActivity() {
     }
 
     private fun initObservers() {
-        liveDataObserve(viewModel.playerListState, { playerListStateUi(it ?: return@liveDataObserve) })
+        liveDataObserve(viewModel.playerListState, { playerListUi(it ?: return@liveDataObserve) })
     }
 
-    private fun playerListStateUi(players: List<Player>) {
-        if (players.isNotEmpty()) {
-            playersAdapter.set(players)
+    private fun playerListUi(playersUiModel: PlayersUiModel) = playersUiModel.run {
+        binding.playersProgressBar.hideOrShow(showProgress)
+        if (players != null) playerListSuccess(players)
+    }
+
+    private fun playerListSuccess(players: List<Player>?) = players?.run {
+        if (isNotEmpty()) {
+            playersAdapter.set(this)
             binding.viewPager.visible()
+        } else {
+            binding.emptyPlayersTextView.visible()
         }
     }
 }

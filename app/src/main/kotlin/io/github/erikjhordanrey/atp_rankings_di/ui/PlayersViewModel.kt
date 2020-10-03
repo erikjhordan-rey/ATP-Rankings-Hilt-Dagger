@@ -14,15 +14,24 @@ import kotlinx.coroutines.withContext
 class PlayersViewModel @ViewModelInject constructor(private val getPlayersUseCase: GetPlayersUseCase,
                                                     private val coDispatcher: CoDispatcher) : ViewModel() {
 
-    private val _playerListState = MutableLiveData<List<Player>>()
+    private val _playerListState = MutableLiveData<PlayersUiModel>()
 
-    val playerListState: LiveData<List<Player>>
+    val playerListState: LiveData<PlayersUiModel>
         get() = _playerListState
 
     fun loadPlayers() {
+        emitPlayersUiState(showProgress = true)
         viewModelScope.launch(coDispatcher.io()) {
             val result = getPlayersUseCase.getAllPlayers()
-            withContext(coDispatcher.main()) { _playerListState.value = result }
+            withContext(coDispatcher.main()) { loadPlayersSuccess(result) }
         }
+    }
+
+    private fun loadPlayersSuccess(players: List<Player>?) {
+        emitPlayersUiState(players = players)
+    }
+
+    private fun emitPlayersUiState(showProgress: Boolean = false, players: List<Player>? = null) {
+        _playerListState.value = PlayersUiModel(showProgress, players)
     }
 }
