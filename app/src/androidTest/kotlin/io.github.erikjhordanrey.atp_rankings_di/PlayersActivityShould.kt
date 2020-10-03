@@ -11,7 +11,6 @@ import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules
 import io.github.erikjhordanrey.atp_rankings_di.core.coroutine.CoDispatcher
 import io.github.erikjhordanrey.atp_rankings_di.data.PlayerRepository
-import io.github.erikjhordanrey.atp_rankings_di.data.Repository
 import io.github.erikjhordanrey.atp_rankings_di.di.AppModule
 import io.github.erikjhordanrey.atp_rankings_di.di.DispatcherModule
 import io.github.erikjhordanrey.atp_rankings_di.doubles.TestCoroutineDispatchers
@@ -34,7 +33,7 @@ class PlayersActivityShould {
 
     @BindValue
     @JvmField
-    val fakePlayerRepository: Repository = mockk<PlayerRepository>()
+    val fakePlayerRepository = mockk<PlayerRepository>()
 
     @ExperimentalCoroutinesApi
     @BindValue

@@ -1,6 +1,9 @@
 package io.github.erikjhordanrey.atp_rankings_di.data
 
-open class PlayerRepository(private val playerLocalDataSource: PlayerLocalDataSource) : Repository {
+import io.github.erikjhordanrey.atp_rankings_di.core.testing.OpenForTesting
 
-    override suspend fun getAllPlayers() = playerLocalDataSource.getAllPlayers()
+@OpenForTesting
+class PlayerRepository(private val playerLocalDataSource: PlayerLocalDataSource) {
+
+    suspend fun getAllPlayers() = playerLocalDataSource.getAllPlayers()
 }
