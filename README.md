@@ -14,7 +14,9 @@ Hilt provides a standard way to use DI in your application by providing containe
 
 You can see my [Hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master) implementation on this example:
 
-[dagger-hilt-example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master)
+[dagger-hilt-example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master) 
+
+(I still continue practicing testing using Hilt)
 
 #### Learn Dependency Injection with Hilt
 
