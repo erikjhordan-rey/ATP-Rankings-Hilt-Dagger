@@ -33,7 +33,7 @@ class PlayersActivityShould {
 
     @BindValue
     @JvmField
-    val fakePlayerRepository = mockk<PlayerRepository>()
+    val playerRepository = mockk<PlayerRepository>()
 
     @ExperimentalCoroutinesApi
     @BindValue
@@ -42,7 +42,7 @@ class PlayersActivityShould {
 
     @Test
     fun showEmptyViewWhenThereAreNotPlayers() {
-        coEvery { fakePlayerRepository.getAllPlayers() } returns emptyList()
+        coEvery { playerRepository.getAllPlayers() } returns emptyList()
 
         launchActivity<PlayersActivity>()
 
@@ -51,7 +51,7 @@ class PlayersActivityShould {
 
     @Test
     fun notShowEmptyViewWhenThereArePlayers() {
-        coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
+        coEvery { playerRepository.getAllPlayers() } returns givenPlayers()
 
         launchActivity<PlayersActivity>()
 
@@ -60,7 +60,7 @@ class PlayersActivityShould {
 
     @Test
     fun notShowProgressBarWhenThereArePlayers() {
-        coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
+        coEvery { playerRepository.getAllPlayers() } returns givenPlayers()
 
         launchActivity<PlayersActivity>()
 
@@ -69,7 +69,7 @@ class PlayersActivityShould {
 
     @Test
     fun hasTheNumberOfPlayersOnViewPager() {
-        coEvery { fakePlayerRepository.getAllPlayers() } returns givenPlayers()
+        coEvery { playerRepository.getAllPlayers() } returns givenPlayers()
 
         launchActivity<PlayersActivity>()
 
