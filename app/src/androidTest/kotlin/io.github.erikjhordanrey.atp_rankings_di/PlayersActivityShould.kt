@@ -69,7 +69,7 @@ class PlayersActivityShould {
 
     @Test
     fun hasTheNumberOfPlayersOnViewPager() {
-        coEvery { playerRepository.getAllPlayers() } returns givenPlayers()
+        coEvery { playerRepository.getAllPlayers() } returns givenPlayersp
 
         launchActivity<PlayersActivity>()
 
