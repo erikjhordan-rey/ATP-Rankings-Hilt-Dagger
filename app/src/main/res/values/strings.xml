@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Rankings ATP Tour Tennis</string>
+    <string name="top_ranking_text">Top %d Rankings</string>
     <string name="ranking_text">Ranking</string>
     <string name="empty_players">There are no players</string>
+    <string name="scroll_message">"Make horizontal scroll to see all players"</string>
 </resources>

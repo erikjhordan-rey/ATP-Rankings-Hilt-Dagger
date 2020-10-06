@@ -27,7 +27,7 @@ class PlayersViewModel @ViewModelInject constructor(private val getPlayersUseCas
         }
     }
 
-    private fun loadPlayersSuccess(players: List<Player>?) {
+    private fun loadPlayersSuccess(players: List<Player>) {
         emitPlayersUiState(players = players)
     }
 

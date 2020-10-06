@@ -12,5 +12,5 @@ import io.github.erikjhordanrey.atp_rankings_di.domain.GetPlayersUseCase
 object PlayersModule {
 
     @Provides
-    fun provideGetPlayersUseCase(repository: PlayerRepository) = GetPlayersUseCase(repository)
+    fun provideGetPlayersUseCase(playerRepository: PlayerRepository) = GetPlayersUseCase(playerRepository)
 }

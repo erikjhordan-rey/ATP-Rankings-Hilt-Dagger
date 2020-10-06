@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-allopen'
+apply plugin: 'shot'
 
 allOpen {
     // allows mocking for classes w/o directly opening them for release builds
@@ -53,13 +54,13 @@ android {
         exclude 'META-INF/AL2.0'
         exclude 'META-INF/LGPL2.1'
     }
-
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation "androidx.activity:activity-ktx:1.1.0"
@@ -77,19 +78,27 @@ dependencies {
     implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02'
     kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
 
-    implementation "com.google.dagger:hilt-android:2.28-alpha"
-    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"
+    implementation "com.google.dagger:hilt-android:2.29.1-alpha"
+    kapt "com.google.dagger:hilt-android-compiler:2.29.1-alpha"
 
-    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.28-alpha'
-    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.28-alpha'
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.29.1-alpha'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.29.1-alpha'
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9-native-mt-2"
 
-    testImplementation "io.mockk:mockk:1.10.2"
-    androidTestImplementation "io.mockk:mockk-android:1.10.2"
+    androidTestImplementation ("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0") {
+        exclude group: "org.mockito", module: "mockito-core"
+    }
+    androidTestImplementation 'org.mockito:mockito-android:3.5.13'
+    androidTestImplementation('org.mockito:mockito-core:3.5.13') {
+        exclude group: 'org.objenesis'
+    }
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
+    androidTestImplementation "androidx.test.espresso:espresso-intents:3.3.0"
+    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2"
     androidTestImplementation 'androidx.test:core-ktx:1.3.0'
+    androidTestImplementation 'androidx.test:core:1.3.0'
     androidTestImplementation 'androidx.test:runner:1.3.0'
 }

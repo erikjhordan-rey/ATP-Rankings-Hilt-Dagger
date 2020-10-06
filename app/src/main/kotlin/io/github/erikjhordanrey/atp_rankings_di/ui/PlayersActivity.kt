@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
+import io.github.erikjhordanrey.atp_rankings_di.R
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.compositeScaleTransform
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.hideOrShow
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.liveDataObserve
@@ -47,8 +48,13 @@ class PlayersActivity : AppCompatActivity() {
         if (isNotEmpty()) {
             playersAdapter.set(this)
             binding.viewPager.visible()
+            updateTitleIfNeeded(size)
         } else {
             binding.emptyPlayersTextView.visible()
         }
+    }
+
+    private fun updateTitleIfNeeded(playerListSize: Int) {
+        if (playerListSize > 1) binding.toolbar.title = getString(R.string.top_ranking_text, playerListSize)
     }
 }
