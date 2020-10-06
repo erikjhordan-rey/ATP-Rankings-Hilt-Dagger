@@ -57,6 +57,16 @@ Provides a [ViewModel](https://developer.android.com/topic/libraries/architectur
 * [dependency Injection - blog-spanish](https://erikjhordan-rey.github.io/blog/2016/04/25/ANDROID-dependency-injection.html)
 * [flexible dependency - slides](https://speakerdeck.com/erikjhordan_rey/flexible-dependency)
 
+## Testing
+
+#### Screenshot Testing
+
+`/gradlew executeScreenshotTests`
+
+#### Instrumental Testing with Espresso 
+
+`./gradlew connectedAndroidTest`
+
 ## Demo
 
 <img src="https://user-images.githubusercontent.com/5893477/94775536-a349f980-0385-11eb-990a-1d12b9ae0f52.gif" width="260">
