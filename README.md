@@ -1,10 +1,11 @@
 # Rankings ATP Tour Tennis - Hilt
 ![](./art/atp-tour.png)
 
-The sample was created to show different approaches using dependency injection in Android projects 
-with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
+The sample was created to share & learn different topics 
 
-I also used this project to practice [UI Testing](https://developer.android.com/training/testing/ui-testing/espresso-testing) & [Screenshot Testing](http://facebook.github.io/screenshot-tests-for-android/#getting-started) with [Hilt Testing](https://developer.android.com/training/dependency-injection/hilt-testing?authuser=1)
+* Show different approaches using dependency injection in Android projects with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
+* Practice [UI Testing](https://developer.android.com/training/testing/ui-testing/espresso-testing) with [Hilt Testing](https://developer.android.com/training/dependency-injection/hilt-testing?authuser=1)
+* Practice [Screenshot Testing](http://facebook.github.io/screenshot-tests-for-android/#getting-started) with [Hilt Testing](https://developer.android.com/training/dependency-injection/hilt-testing?authuser=1)
 
 ## Dependency Injection 
 
@@ -17,8 +18,6 @@ Hilt provides a standard way to use DI in your application by providing containe
 You can see my [Hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master) implementation on this example:
 
 [dagger-hilt-example](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/master) 
-
-(I still continue practicing testing using Hilt)
 
 #### Learn Dependency Injection with Hilt
 
