@@ -70,7 +70,7 @@ class PlayersActivityShould {
 
     @Test
     fun hasTheNumberOfPlayersOnViewPager() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers()) }
+        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers(4)) }
 
         launchActivity<PlayersActivity>()
 
@@ -79,6 +79,6 @@ class PlayersActivityShould {
 
     companion object {
 
-        private const val ANY_PLAYER_LIST_COUNT = 1
+        private const val ANY_PLAYER_LIST_COUNT = 4
     }
 }
