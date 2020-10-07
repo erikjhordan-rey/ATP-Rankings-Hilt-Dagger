@@ -39,4 +39,4 @@ jobs:
           api-level: 29
           disable-animations: true
           profile: pixel
-          script: ./gradlew connectedCheck debugExecuteScreenshotTests -PprintBase64
+          script: ./gradlew connectedCheck debugExecuteScreenshotTests --debug
