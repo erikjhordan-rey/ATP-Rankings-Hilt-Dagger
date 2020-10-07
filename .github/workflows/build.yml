@@ -1,0 +1,17 @@
+name: Android CI
+
+on: pull_request
+
+jobs:
+  builds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: setup JDK
+        uses: actions/setup-java@v1
+
+      - name: Build Project
+        run: ./gradlew assemble
+
