@@ -1,7 +1,0 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.erikjhordanrey.atp_rankings_di.test"
-    android:sharedUserId="io.github.erikjhordanrey.atp_rankings_di.uid">
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-</manifest>
