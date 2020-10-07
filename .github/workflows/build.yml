@@ -38,6 +38,7 @@ jobs:
         with:
           api-level: 29
           arch: x86
+          target: google_apis
           disable-animations: true
           profile: Nexus 6
           script: ./gradlew connectedCheck executeScreenshotTests -PprintBase64
