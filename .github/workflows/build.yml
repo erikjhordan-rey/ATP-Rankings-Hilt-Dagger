@@ -37,6 +37,8 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
+          arch: x86
+          target: google_apis
+          profile: Nexus 6
           disable-animations: true
-          profile: pixel
-          script: ./gradlew connectedCheck
+          script: ./gradlew connectedCheck executeScreenshotTests -PprintBase64
