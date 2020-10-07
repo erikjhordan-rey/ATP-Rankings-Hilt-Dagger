@@ -4,15 +4,15 @@
 
 ![](./art/atp-tour.png)
 
-The sample was created to share & learn different topics 
+The following sample contains:
 
-* Show different approaches using dependency injection in Android projects with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
+* Tips and Tricks using dependency injection in Android projects with [Dagger](https://dagger.dev/) & [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
 * Practice [UI Testing](https://developer.android.com/training/testing/ui-testing/espresso-testing) with [Hilt Testing](https://developer.android.com/training/dependency-injection/hilt-testing?authuser=1)
 * Practice [Screenshot Testing](http://facebook.github.io/screenshot-tests-for-android/#getting-started) with [Hilt Testing](https://developer.android.com/training/dependency-injection/hilt-testing?authuser=1)
 
 ## Dependency Injection 
 
-This sample contains multiple branches to show different popular approaches used to provide dependencies in android apps.
+I collected tips and tricks that will help you get approaches used to apply [DI](https://martinfowler.com/articles/injection.html) in android apps.
 
 ## Hilt
 
