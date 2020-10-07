@@ -41,4 +41,4 @@ jobs:
           target: google_apis
           disable-animations: true
           profile: Nexus 6
-          script: ./gradlew executeScreenshotTests -Precord
+          script: ./gradlew executeScreenshotTests
