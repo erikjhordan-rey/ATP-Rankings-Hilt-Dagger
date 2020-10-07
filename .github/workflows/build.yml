@@ -1,4 +1,4 @@
-name: Android CI
+name: Android-Health
 
 on: pull_request
 
