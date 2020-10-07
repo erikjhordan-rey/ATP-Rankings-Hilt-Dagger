@@ -41,4 +41,9 @@ jobs:
           target: google_apis
           profile: Nexus 6
           disable-animations: true
-          script: ./gradlew executeScreenshotTests -PprintBase64 connectedCheck
+
+      - name: Execute espresso UI tests
+        run: ./gradlew connectedCheck
+
+      - name: Execute screenshot tests
+        run: ./gradlew executeScreenshotTests
