@@ -5,6 +5,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.rules.activityScenarioRule
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.stub
@@ -19,6 +20,7 @@ import io.github.erikjhordanrey.atp_rankings_di.di.DispatcherModule
 import io.github.erikjhordanrey.atp_rankings_di.doubles.TestCoroutineDispatchers
 import io.github.erikjhordanrey.atp_rankings_di.doubles.givenPlayers
 import io.github.erikjhordanrey.atp_rankings_di.matcher.ViewPagerItemsCountMatcher.Companion.viewPagerHasItemCount
+import io.github.erikjhordanrey.atp_rankings_di.screenshot.ScreenShotShould
 import io.github.erikjhordanrey.atp_rankings_di.ui.PlayersActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.hamcrest.CoreMatchers.not
@@ -27,10 +29,13 @@ import org.junit.Test
 
 @UninstallModules(AppModule::class, DispatcherModule::class)
 @HiltAndroidTest
-class PlayersActivityShould {
+class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity::class.java) {
 
     @get:Rule
     var hiltRule = HiltAndroidRule(this)
+
+    @get:Rule
+    var activityScenarioRule = activityScenarioRule<PlayersActivity>()
 
     @BindValue
     @JvmField
@@ -75,6 +80,33 @@ class PlayersActivityShould {
         launchActivity<PlayersActivity>()
 
         onView(withId(R.id.view_pager)).check(matches(viewPagerHasItemCount(ANY_PLAYER_LIST_COUNT)))
+    }
+
+    @Test
+    fun showEmptyViewWhenThereAreNotPlayersScreenShot() {
+        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(emptyList()) }
+
+        val scenario = startActivity()
+
+        compareScreenshot(scenario)
+    }
+
+    @Test
+    fun notShowEmptyViewWhenThereArePlayersScreenShot() {
+        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers()) }
+
+        val scenario = startActivity()
+
+        compareScreenshot(scenario)
+    }
+
+    @Test
+    fun showPlayersSizeInToolbarWhenThereAreMorePlayersScreenShot() {
+        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers(4)) }
+
+        val scenario = startActivity()
+
+        compareScreenshot(scenario)
     }
 
     companion object {
