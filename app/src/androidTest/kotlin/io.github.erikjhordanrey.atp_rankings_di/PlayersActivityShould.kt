@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.stub
+import com.nhaarman.mockitokotlin2.whenever
 import dagger.hilt.android.testing.BindValue
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -50,7 +50,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showEmptyViewWhenThereAreNotPlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(emptyList())) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(emptyList()))
 
         launchActivity<PlayersActivity>()
 
@@ -59,7 +59,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowEmptyViewWhenThereArePlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(givenPlayers())) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         launchActivity<PlayersActivity>()
 
@@ -68,7 +68,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowProgressBarWhenThereArePlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(givenPlayers())) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         launchActivity<PlayersActivity>()
 
@@ -77,7 +77,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun hasTheNumberOfPlayersOnViewPager() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(givenPlayers(4))) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers(4)))
 
         launchActivity<PlayersActivity>()
 
@@ -86,7 +86,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showEmptyViewWhenThereAreNotPlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(emptyList())) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(emptyList()))
 
         val scenario = startActivity()
 
@@ -95,7 +95,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowEmptyViewWhenThereArePlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(givenPlayers())) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         val scenario = startActivity()
 
@@ -104,7 +104,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showPlayersSizeInToolbarWhenThereAreMorePlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(flowOf(givenPlayers(4))) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers(4)))
 
         val scenario = startActivity()
 
