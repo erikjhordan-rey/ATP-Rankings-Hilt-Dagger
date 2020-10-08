@@ -76,7 +76,7 @@ Provides a [ViewModel](https://developer.android.com/topic/libraries/architectur
 
 Maybe you noticed some test are pretty similar as:
 
-*showEmptyViewWhenThereAreNotPlayersScreenShot* & *notShowEmptyViewWhenThereArePlayers*
+*showEmptyViewWhenThereAreNotPlayersScreenShot* & *showEmptyViewWhenThereAreNotPlayers*
     
 **Instrumental Test**    
 *showEmptyViewWhenThereAreNotPlayers*: is ensuring the view is shown
