@@ -64,11 +64,27 @@ Provides a [ViewModel](https://developer.android.com/topic/libraries/architectur
 
 #### Screenshot Testing
 
-`/gradlew executeScreenshotTests`
+`./gradlew executeScreenshotTests`
 
 #### Instrumental Testing with Espresso 
 
 `./gradlew connectedAndroidTest`
+
+#### Screenshot Testing + Instrumental Testing
+
+`./gradlew connectedCheck executeScreenshotTest`
+
+Maybe you noticed some test are pretty similar as:
+
+*showEmptyViewWhenThereAreNotPlayersScreenShot* & *showEmptyViewWhenThereAreNotPlayers*
+    
+**Instrumental Test**    
+*showEmptyViewWhenThereAreNotPlayers*: is ensuring the view is shown
+
+**Screenshot Test**  
+*showEmptyViewWhenThereAreNotPlayersScreenShot*: is ensuring the view is shown in the correct place on the screen
+
+Yes, probably you can replace an instrumental test with a screenshot test in some scenarios in another ones you can be benefited from both.
 
 ## Demo
 

@@ -39,7 +39,7 @@ jobs:
           api-level: 29
           arch: x86
           target: google_apis
-          profile: Nexus 6
+          profile: Nexus 5X
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: ./gradlew connectedCheck executeScreenshotTest
