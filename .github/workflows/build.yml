@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run UI Tests
-        uses: ReactiveCircus/android-emulator-runner@v2.11.0
+        uses: ReactiveCircus/android-emulator-runner@v2
         with:
           api-level: 29
           arch: x86
