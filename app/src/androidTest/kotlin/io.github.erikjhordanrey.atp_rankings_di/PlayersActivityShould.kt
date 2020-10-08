@@ -113,11 +113,4 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
         private const val ANY_PLAYER_LIST_COUNT = 4
     }
-
-    // Maybe you noticed some test are pretty similar as:
-    // showEmptyViewWhenThereAreNotPlayersScreenShot & notShowEmptyViewWhenThereArePlayers
-    // Tests:
-    // notShowEmptyViewWhenThereArePlayers: is ensuring the view is shown
-    // showEmptyViewWhenThereAreNotPlayersScreenShot: is ensuring the view is shown in the correct place on the screen
-    // Conclusion: Yes, probably you can replace an instrumental test with a screenshot test in some scenarios in another ones you can be benefited from both.
 }
