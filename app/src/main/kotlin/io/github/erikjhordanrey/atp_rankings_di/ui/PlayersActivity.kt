@@ -3,15 +3,19 @@ package io.github.erikjhordanrey.atp_rankings_di.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.erikjhordanrey.atp_rankings_di.R
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.compositeScaleTransform
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.hideOrShow
-import io.github.erikjhordanrey.atp_rankings_di.core.extension.liveDataObserve
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.visible
 import io.github.erikjhordanrey.atp_rankings_di.databinding.ActivityPlayersBinding
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
+@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class PlayersActivity : AppCompatActivity() {
 
@@ -36,7 +40,7 @@ class PlayersActivity : AppCompatActivity() {
     }
 
     private fun initObservers() {
-        liveDataObserve(viewModel.playerListState, { playerListUi(it ?: return@liveDataObserve) })
+        viewModel.playerListState.onEach { playerListUi(it) }.launchIn(lifecycleScope)
     }
 
     private fun playerListUi(playersUiModel: PlayersUiModel) = playersUiModel.run {

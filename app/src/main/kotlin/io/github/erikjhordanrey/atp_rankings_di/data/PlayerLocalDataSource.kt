@@ -3,14 +3,16 @@ package io.github.erikjhordanrey.atp_rankings_di.data
 import io.github.erikjhordanrey.atp_rankings_di.core.testing.OpenForTesting
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
 @OpenForTesting
 class PlayerLocalDataSource {
 
-    suspend fun getAllPlayers(): List<Player> {
+    fun getAllPlayers(): Flow<List<Player>> = flow {
         delay(1500)
-        // return an emptyList() list to test the empty case ;)
-        return createPlayers()
+        // emit an emptyList() list to test the empty case ;)
+        emit(createPlayers())
     }
 
     private fun createPlayers() = mutableListOf<Player>().apply {

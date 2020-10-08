@@ -8,7 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.activityScenarioRule
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.stub
+import com.nhaarman.mockitokotlin2.whenever
 import dagger.hilt.android.testing.BindValue
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
@@ -23,10 +23,12 @@ import io.github.erikjhordanrey.atp_rankings_di.matcher.ViewPagerItemsCountMatch
 import io.github.erikjhordanrey.atp_rankings_di.screenshot.ScreenShotShould
 import io.github.erikjhordanrey.atp_rankings_di.ui.PlayersActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
 import org.hamcrest.CoreMatchers.not
 import org.junit.Rule
 import org.junit.Test
 
+@ExperimentalCoroutinesApi
 @UninstallModules(AppModule::class, DispatcherModule::class)
 @HiltAndroidTest
 class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity::class.java) {
@@ -48,7 +50,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showEmptyViewWhenThereAreNotPlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(emptyList()) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(emptyList()))
 
         launchActivity<PlayersActivity>()
 
@@ -57,7 +59,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowEmptyViewWhenThereArePlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers()) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         launchActivity<PlayersActivity>()
 
@@ -66,7 +68,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowProgressBarWhenThereArePlayers() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers()) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         launchActivity<PlayersActivity>()
 
@@ -75,7 +77,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun hasTheNumberOfPlayersOnViewPager() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers(4)) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers(4)))
 
         launchActivity<PlayersActivity>()
 
@@ -84,7 +86,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showEmptyViewWhenThereAreNotPlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(emptyList()) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(emptyList()))
 
         val scenario = startActivity()
 
@@ -93,7 +95,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun notShowEmptyViewWhenThereArePlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers()) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers()))
 
         val scenario = startActivity()
 
@@ -102,7 +104,7 @@ class PlayersActivityShould : ScreenShotShould<PlayersActivity>(PlayersActivity:
 
     @Test
     fun showPlayersSizeInToolbarWhenThereAreMorePlayersScreenShot() {
-        playerRepository.stub { onBlocking { getAllPlayers() }.doReturn(givenPlayers(4)) }
+        whenever(playerRepository.getAllPlayers()).doReturn(flowOf(givenPlayers(4)))
 
         val scenario = startActivity()
 
