@@ -15,7 +15,7 @@ The sample cover the following topics:
 
 I collected tips and tricks that will help you get approaches used to apply [DI](https://martinfowler.com/articles/injection.html) in android apps.
 
-## Hilt
+## Hilt is stable!
 
 Hilt provides a standard way to use DI in your application by providing containers for every Android class in your project and managing their lifecycles automatically.
 
@@ -25,6 +25,7 @@ You can see my [Hilt](https://github.com/erikjhordan-rey/ATP-Rankings-di/tree/ma
 
 #### Learn Dependency Injection with Hilt
 
+* [Hilt is stable! Easier dependency injection on Android](https://medium.com/androiddevelopers/hilt-is-stable-easier-dependency-injection-on-android-53aca3f38b9c#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6ImNkNDliMmFiMTZlMWU5YTQ5NmM4MjM5ZGFjMGRhZGQwOWQ0NDMwMTIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2MjIxNzI2NDQsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMDM5NTc5MDE3Mzk1ODEzODE5NiIsImVtYWlsIjoiZXJpa2pob3JkYW4ucmV5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiIyMTYyOTYwMzU4MzQtazFrNnFlMDYwczJ0cDJhMmphbTRsamRjbXMwMHN0dGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJuYW1lIjoiRXJpayBKaG9yZGFuIFJleSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHZ2RuM09POWxIZ0VyOWM2VUVmZ0RhN0RVc2dzdFFLcVpIeTZZV1dVQT1zOTYtYyIsImdpdmVuX25hbWUiOiJFcmlrIEpob3JkYW4iLCJmYW1pbHlfbmFtZSI6IlJleSIsImlhdCI6MTYyMjE3Mjk0NCwiZXhwIjoxNjIyMTc2NTQ0LCJqdGkiOiI2MTE0YjUzOGQxMmE1NDdmOTcyNGM2MmMyM2ZkZWNmZDk2ZmZlYmZlIn0.bHkKSWlXeFb8U-UgLJG1cNFBNU5XWUykTRNaE3cael5YnuCzWxjcvBerHlr_jpnNPqS2Lte_a778SnHsKa5FdVS4KjxRqUts-zqpz1aNSeVmlzhU1wDmg_Cq-9a-ekgIdeTftBmDPK-ZbVPIX0mYChSksaOkj4-TWJkF0J3EkQL4Y-OBJJcHFbyFkp8Suva75KciZvMfm8dGPM1lF5vXkQKfGghbGT-hYgCbOeV_yTUzXKcACXI5v_8WzaoMRiWNn3zYdvEKjH55-oj8FYg1NbisnZNUIONMmsy-Y30EmGclkeSAULTTvBy78yo7qRy9qQvwrjIV71pymRU7NFldCQ)
 * [hilt-android - doc](https://developer.android.com/training/dependency-injection/hilt-android)
 * [dependency injection on android with hilt - blog](https://medium.com/androiddevelopers/dependency-injection-on-android-with-hilt-67b6031e62d)
 * [hilt - Android Dependency Injection - talk](https://www.youtube.com/watch?v=B56oV3IHMxg)
