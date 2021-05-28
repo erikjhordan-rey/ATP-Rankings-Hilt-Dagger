@@ -11,11 +11,9 @@ import io.github.erikjhordanrey.atp_rankings_di.core.extension.hideOrShow
 import io.github.erikjhordanrey.atp_rankings_di.core.extension.visible
 import io.github.erikjhordanrey.atp_rankings_di.databinding.ActivityPlayersBinding
 import io.github.erikjhordanrey.atp_rankings_di.domain.Player
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
-@ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class PlayersActivity : AppCompatActivity() {
 
